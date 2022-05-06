@@ -1,3 +1,4 @@
+const WindiCSSWebpackPlugin = require("windicss-webpack-plugin");
 const withLess = require("next-with-less");
 
 /** @type {import('next').NextConfig} */
@@ -12,6 +13,10 @@ const nextConfig = {
         "primary-color": "#1b4edd",
       },
     },
+  },
+  webpack(config) {
+    config.plugins.push(new WindiCSSWebpackPlugin());
+    return config;
   },
 };
 
